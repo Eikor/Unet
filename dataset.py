@@ -45,15 +45,15 @@ class CellDataset(Dataset):
         
         img = (img - np.mean(img)) / (np.max(img) - np.min(img))
         
-        label = np.unique(mask)
-        for cell in label[1:]:
-            iy, ix = np.where((mask == cell) > 0)
-            x = np.min(ix)
-            y = np.min(iy)
-            x2 = np.max(ix)
-            y2 = np.max(iy)
-            h = x2 - x
-            w = y2 - y
+        # label = np.unique(mask)
+        # for cell in label[1:]:
+        #     iy, ix = np.where((mask == cell) > 0)
+        #     x = np.min(ix)
+        #     y = np.min(iy)
+        #     x2 = np.max(ix)
+        #     y2 = np.max(iy)
+        #     h = x2 - x
+        #     w = y2 - y
         
         
         mask = np.clip(mask, 0, 1).astype('int8')
